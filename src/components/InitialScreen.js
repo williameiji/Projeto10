@@ -73,6 +73,7 @@ const Box = styled.div`
     p {
         margin: 25px 0 0 0;
         font-size: 14px;
+        color: #52B6FF;
     }
 `;
 

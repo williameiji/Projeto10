@@ -15,22 +15,17 @@ export default function App() {
     const [userInfo, setUserInfo] = React.useState("");
 
     return (
-
         <Body>
             <UserContext.Provider value={{ userInfo, setUserInfo }}>
-
                 <BrowserRouter>
                     <Routes>
-
                         <Route path="/" element={<InitialScreen />} />
                         <Route path="/cadastro" element={<SignupScreen />} />
                         <Route path="/habitos" element={<HabitsScreen />} />
                         <Route path="/hoje" element={<TodayScreen />} />
                         <Route path="/historico" element={<HistoryScreen />} />
-
                     </Routes>
                 </BrowserRouter>
-
             </UserContext.Provider>
         </Body >
 
