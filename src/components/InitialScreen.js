@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/images/logo-trackit.png";
 import axios from "axios";
 
 import Loading from "./Loading";
+import UserContext from "../context/UserContext";
 
 function LoginInput({ dataInput, handleFormChange, login, blockInput }) {
     return (
@@ -22,6 +23,7 @@ export default function InitialScreen() {
         password: ""
     });
     const [blockInput, setBlockInput] = useState(false);
+    const { setUserInfo } = useContext(UserContext);
 
     const navigate = useNavigate();
 
@@ -37,15 +39,13 @@ export default function InitialScreen() {
 
         let promise = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login", dataInput);
         promise.then(response => {
-            console.log(response)
+            setUserInfo(response.data);
             navigate("/hoje");
         });
 
         promise.catch(err => {
-            console.log(err)
-            alert(err.response.data.message)
-
-            setBlockInput(false)
+            alert(err.response.data.message);
+            setBlockInput(false);
         });
     }
 
