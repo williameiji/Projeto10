@@ -8,23 +8,27 @@ import SignupScreen from "./SignupScreen";
 import HabitsScreen from "./HabitsScreen";
 import TodayScreen from "./TodayScreen";
 import HistoryScreen from "./HistoryScreen";
+import UserContext from "../context/UserContext";
 
 
-export default function App () {
-    const [userToken, setUserToken] = React.useState("")
+export default function App() {
+    const [userInfo, setUserInfo] = React.useState("");
 
     return (
         <Body>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<InitialScreen />} />
-                    <Route path="/cadastro" element={<SignupScreen />} />
-                    <Route path="/habitos" element={<HabitsScreen />} />
-                    <Route path="/hoje" element={<TodayScreen />} />
-                    <Route path="/historico" element={<HistoryScreen />} />
-                </Routes>
-            </BrowserRouter>
-        </Body>
+            <UserContext.Provider value={{ userInfo, setUserInfo }}>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<InitialScreen />} />
+                        <Route path="/cadastro" element={<SignupScreen />} />
+                        <Route path="/habitos" element={<HabitsScreen />} />
+                        <Route path="/hoje" element={<TodayScreen />} />
+                        <Route path="/historico" element={<HistoryScreen />} />
+                    </Routes>
+                </BrowserRouter>
+            </UserContext.Provider>
+        </Body >
+
     );
 }
 
