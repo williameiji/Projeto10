@@ -10,7 +10,6 @@ import TodayScreen from "./TodayScreen";
 import HistoryScreen from "./HistoryScreen";
 import UserContext from "../context/UserContext";
 
-
 export default function App() {
     const [userInfo, setUserInfo] = React.useState("");
 
@@ -28,7 +27,6 @@ export default function App() {
                 </BrowserRouter>
             </UserContext.Provider>
         </Body >
-
     );
 }
 
