@@ -37,7 +37,7 @@ export default function InitialScreen() {
 
         let promise = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login", dataInput);
         promise.then(response => {
-
+            console.log(response)
             navigate("/hoje");
         });
 
@@ -50,15 +50,15 @@ export default function InitialScreen() {
     }
 
     return (
-        <Body>
+        <Box>
             <img src={logo} alt="logo" />
             <LoginInput dataInput={dataInput} handleFormChange={handleFormChange} login={login} blockInput={blockInput} />
             <Link to="/cadastro"><p>Não tem uma conta? Cadastre-se!</p></Link>
-        </Body>
+        </Box>
     );
 }
 
-const Body = styled.div`
+const Box = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;

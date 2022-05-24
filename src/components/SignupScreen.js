@@ -6,7 +6,6 @@ import axios from "axios";
 
 import Loading from "./Loading";
 
-
 function LoginInput({ dataInput, handleFormChange, singup, blockInput }) {
     return (
         <Forms onSubmit={singup} blockInput={blockInput}>
@@ -39,9 +38,8 @@ function singup(e) {
     e.preventDefault();
     setBlockInput(true);
 
-    let promise = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/sign-up")//, dataInput);
+    let promise = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/sign-up", dataInput);
     promise.then(response => {
-
         navigate("/");
     });
 
@@ -51,17 +49,16 @@ function singup(e) {
     });
 }
 
-
     return (
-        <Body>
+        <Box>
             <img src={logo} alt="logo" />
             <LoginInput dataInput={dataInput} handleFormChange={handleFormChange} singup={singup} blockInput={blockInput} />
             <Link to="/"><p>Já tem uma conta? Faça login!</p></Link>
-        </Body>
+        </Box>
     );
 }
 
-const Body = styled.div`
+const Box = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
