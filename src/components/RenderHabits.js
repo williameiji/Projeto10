@@ -11,11 +11,7 @@ export default function RenderHabits({ deleteHabits }) {
             {habits.map((value, index) => <Habits key={index}>
                 <p>{value.name}</p>
                 <Weekdays>
-                    {arrayDays.day.map((element, index) => <Days color={() => {
-                        for (let i = 0; i < value.days.length; i++) {
-                            if (element.num === value.days[i]) return "#CFCFCF";
-                        }
-                    }} key={index} >{element.name}</Days>)}
+                    {arrayDays.day.map((element, index) => <Days color={value.days.some(day => day === element.num)} key={index} >{element.name}</Days>)}
                 </Weekdays>
                 <DeleteButton onClick={() => deleteHabits(value.id)}>🗑️</DeleteButton>
             </Habits>)}
@@ -56,7 +52,7 @@ const Days = styled.div`
     justify-content: center;
     width: 30px;
     height: 30px;
-    background: ${props => props.color};
+    background: ${props => props.color ? "#CFCFCF" : "#FFFFFF"};
     pointer-events: ${props => props.blockInput ? "none" : ""};
     border: 1px solid #D5D5D5;
     border-radius: 5px;
