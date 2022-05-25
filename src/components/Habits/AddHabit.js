@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import Loading from "./Loading";
+import Loading from "../../shared/Loading";
 
 export default function AddHabit({ blockInput, handleFormChange, newHabits, selectDays, renderDays, submit, setRenderNewHabits }) {
     return (

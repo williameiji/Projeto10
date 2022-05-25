@@ -3,11 +3,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 import "../assets/css/reset.css";
 
-import InitialScreen from "./InitialScreen";
-import SignupScreen from "./SignupScreen";
-import HabitsScreen from "./HabitsScreen";
-import TodayScreen from "./TodayScreen";
-import HistoryScreen from "./HistoryScreen";
+import InitialScreen from "../components/Login/InitialScreen";
+import SignupScreen from "../components/Signup/SignupScreen";
+import HabitsScreen from "../components/Habits/HabitsScreen";
+import TodayScreen from "../components/TodayScreen/TodayScreen";
+import HistoryScreen from "../components/HistoryScreen/HistoryScreen";
 import UserContext from "../context/UserContext";
 
 export default function App() {
@@ -27,7 +27,7 @@ export default function App() {
                     </Routes>
                 </BrowserRouter>
             </UserContext.Provider>
-        </Body >
+        </Body>
     );
 }
 

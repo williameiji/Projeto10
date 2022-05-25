@@ -1,5 +1,5 @@
-import BottomBar from "./BottomBar";
-import TopBar from "./TopBar";
+import BottomBar from "../../shared/BottomBar";
+import TopBar from "../../shared/TopBar";
 
 export default function TodayScreen() {
     return (

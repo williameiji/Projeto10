@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import BottomBar from "./BottomBar";
-import TopBar from "./TopBar";
+import BottomBar from "../../shared/BottomBar";
+import TopBar from "../../shared/TopBar";
 
 export default function HistoryScreen() {
     const textHistory = "Em breve você poderá ver o histórico dos seus hábitos aqui!";
@@ -33,7 +33,6 @@ const Title = styled.div`
     flex-direction: column;
     margin: 100px 0 0 0;
     padding: 0 18px;
-
     p {
         font-size: 23px;
         color: #126BA5;

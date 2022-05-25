@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../assets/images/logo-trackit.png";
 import axios from "axios";
 
-import Loading from "./Loading";
-import UserContext from "../context/UserContext";
+import logo from "../../assets/images/logo-trackit.png";
+import Loading from "../../shared/Loading";
+import UserContext from "../../context/UserContext";
 
 function LoginInput({ dataInput, handleFormChange, login, blockInput }) {
     return (

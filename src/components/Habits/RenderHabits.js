@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import styled from "styled-components";
 
-import UserContext from "../context/UserContext";
-import arrayDays from "../assets/shared/objectDays";
+import UserContext from "../../context/UserContext";
+import arrayDays from "../../shared/objectDays";
 
 export default function RenderHabits({ deleteHabits }) {
     const { habits } = useContext(UserContext);

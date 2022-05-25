@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import ProgressBar from "./ProgessBar";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+
+import ProgressBar from "../shared/ProgessBar";
 
 export default function BottomBar() {
     return (
