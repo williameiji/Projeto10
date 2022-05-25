@@ -2,10 +2,10 @@ import { useContext, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-import UserContext from "../context/UserContext";
-import BottomBar from "./BottomBar";
-import TopBar from "./TopBar";
-import arrayDays from "../assets/shared/objectDays";
+import UserContext from "../../context/UserContext";
+import BottomBar from "../../shared/BottomBar";
+import TopBar from "../../shared/TopBar";
+import arrayDays from "../../shared/objectDays";
 import RenderHabits from "./RenderHabits";
 import AddHabit from "./AddHabit";
 

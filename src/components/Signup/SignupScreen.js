@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../assets/images/logo-trackit.png";
 import axios from "axios";
 
-import Loading from "./Loading";
+import logo from "../../assets/images/logo-trackit.png";
+import Loading from "../../shared/Loading";
 
 function LoginInput({ dataInput, handleFormChange, singup, blockInput }) {
     return (
