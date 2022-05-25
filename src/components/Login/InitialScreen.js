@@ -6,6 +6,8 @@ import axios from "axios";
 import logo from "../../assets/images/logo-trackit.png";
 import Loading from "../../shared/Loading";
 import UserContext from "../../context/UserContext";
+import url from "../../services/api";
+
 
 function LoginInput({ dataInput, handleFormChange, login, blockInput }) {
     return (
@@ -23,8 +25,8 @@ export default function InitialScreen() {
         password: ""
     });
     const [blockInput, setBlockInput] = useState(false);
-    const { setUserInfo } = useContext(UserContext);
-
+    const { setUserInfo, trackItToken } = useContext(UserContext);
+    const [control, setControl] = useState(true);
     const navigate = useNavigate();
 
     function handleFormChange(e) {
@@ -33,13 +35,28 @@ export default function InitialScreen() {
         setDataInput(data);
     }
 
+    if (trackItToken.email && control) {
+        setControl(false);
+        let promise = axios.post(url.login, trackItToken);
+        promise.then(response => {
+            setUserInfo(response.data);
+            navigate("/hoje");
+        });
+
+        promise.catch(err => {
+            alert(err.response.data.message);
+        });
+    }
+
     function login(e) {
         e.preventDefault();
         setBlockInput(true);
 
-        let promise = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login", dataInput);
+        let promise = axios.post(url.login, dataInput);
         promise.then(response => {
             setUserInfo(response.data);
+            let serializationData = JSON.stringify({ ...dataInput });
+            localStorage.setItem("login", serializationData);
             navigate("/hoje");
         });
 

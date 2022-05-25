@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 import "../assets/css/reset.css";
@@ -11,12 +11,21 @@ import HistoryScreen from "../components/HistoryScreen/HistoryScreen";
 import UserContext from "../context/UserContext";
 
 export default function App() {
-    const [userInfo, setUserInfo] = React.useState("");
-    const [habits, setHabits] = React.useState([]);
+    const [userInfo, setUserInfo] = useState("");
+    const [habits, setHabits] = useState([]);
+    const [trackItToken, setTrackItToken] = useState({});
+    const [control, setControl] = useState(true);
+
+    if (control) {
+        setControl(false);
+        let loginStoraged = localStorage.getItem("login");
+        let deserializationData = JSON.parse(loginStoraged);
+        setTrackItToken({ ...deserializationData })
+    }
 
     return (
         <Body>
-            <UserContext.Provider value={{ userInfo, setUserInfo, habits, setHabits }}>
+            <UserContext.Provider value={{ userInfo, setUserInfo, habits, setHabits, trackItToken }}>
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<InitialScreen />} />
