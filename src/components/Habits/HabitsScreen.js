@@ -96,7 +96,7 @@ export default function HabitsScreen() {
 
     const noHabits = "Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!";
 
-    function deleteHabits(id){
+    function deleteHabits(id) {
         if (window.confirm("Deseja remover esse hábito?") === true) {
             axios.delete(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}`, config);
             setCallHabits(true);
@@ -164,9 +164,3 @@ const Text = styled.div`
     padding: 5px 18px;
     margin: 28px 0 0 0;
 `;
-
-
-
-
-
-
