@@ -12,10 +12,11 @@ import UserContext from "../context/UserContext";
 
 export default function App() {
     const [userInfo, setUserInfo] = React.useState("");
+    const [habits, setHabits] = React.useState([]);
 
     return (
         <Body>
-            <UserContext.Provider value={{ userInfo, setUserInfo }}>
+            <UserContext.Provider value={{ userInfo, setUserInfo, habits, setHabits }}>
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<InitialScreen />} />
