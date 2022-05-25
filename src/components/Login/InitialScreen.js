@@ -23,8 +23,8 @@ export default function InitialScreen() {
         password: ""
     });
     const [blockInput, setBlockInput] = useState(false);
-    const { setUserInfo } = useContext(UserContext);
-
+    const { setUserInfo, autoLogin } = useContext(UserContext);
+    const [control, setControl] = useState(true);
     const navigate = useNavigate();
 
     function handleFormChange(e) {
@@ -33,13 +33,30 @@ export default function InitialScreen() {
         setDataInput(data);
     }
 
+    if (autoLogin.email && control) {
+        setDataInput({ ...autoLogin });
+        setControl(false);
+        let promise = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login", autoLogin);
+        promise.then(response => {
+            setUserInfo(response.data);
+            navigate("/hoje");
+        });
+
+        promise.catch(err => {
+            alert(err.response.data.message);
+            setBlockInput(false);
+        });
+    }
+
     function login(e) {
-        e.preventDefault();
+        if (e !== undefined) e.preventDefault();
         setBlockInput(true);
 
         let promise = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login", dataInput);
         promise.then(response => {
             setUserInfo(response.data);
+            let serializationData = JSON.stringify({ ...dataInput });
+            localStorage.setItem("login", serializationData);
             navigate("/hoje");
         });
 

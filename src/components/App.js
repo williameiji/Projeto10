@@ -13,10 +13,20 @@ import UserContext from "../context/UserContext";
 export default function App() {
     const [userInfo, setUserInfo] = React.useState("");
     const [habits, setHabits] = React.useState([]);
+    const [autoLogin, setAutoLogin] = React.useState({});
+    const [control, setControl] = React.useState(true);
+
+    if (control) {
+        setControl(false);
+        console.log(localStorage.getItem("login"));
+        let loginStoraged = localStorage.getItem("login");
+        let deserializationData = JSON.parse(loginStoraged);
+        setAutoLogin({ ...deserializationData })
+    }
 
     return (
         <Body>
-            <UserContext.Provider value={{ userInfo, setUserInfo, habits, setHabits }}>
+            <UserContext.Provider value={{ userInfo, setUserInfo, habits, setHabits, autoLogin }}>
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<InitialScreen />} />
