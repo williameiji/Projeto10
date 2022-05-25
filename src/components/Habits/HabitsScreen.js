@@ -8,6 +8,7 @@ import TopBar from "../../shared/TopBar";
 import arrayDays from "../../shared/objectDays";
 import RenderHabits from "./RenderHabits";
 import AddHabit from "./AddHabit";
+import url from "../../services/api";
 
 export default function HabitsScreen() {
     const { userInfo, habits, setHabits } = useContext(UserContext);
@@ -27,7 +28,7 @@ export default function HabitsScreen() {
     }
 
     if (callHabits) {
-        const promise = axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits', config);
+        const promise = axios.get(url.habit, config);
         promise.then(response => {
             setHabits(response.data);
             setCallHabits(false);
@@ -68,7 +69,7 @@ export default function HabitsScreen() {
     function submit() {
         if (newHabits.name.length > 0 && newHabits.days.length > 0) {
             setBlockInput(true);
-            const promise = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits", newHabits, config);
+            const promise = axios.post(url.habit, newHabits, config);
             promise.then(response => {
                 setBlockInput(false);
                 setRenderNewHabits(false);
@@ -98,7 +99,7 @@ export default function HabitsScreen() {
 
     function deleteHabits(id) {
         if (window.confirm("Deseja remover esse hábito?") === true) {
-            axios.delete(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}`, config);
+            axios.delete(`${url.deleteHabit}${id}`, config);
             setCallHabits(true);
         }
     }
