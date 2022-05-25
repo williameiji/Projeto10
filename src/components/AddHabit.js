@@ -25,7 +25,6 @@ const BoxNewHabit = styled.div`
     padding: 18px 25px 18px 18px;
 `;
 
-
 const Weekdays = styled.div`
     display: flex;
     align-items: center;
