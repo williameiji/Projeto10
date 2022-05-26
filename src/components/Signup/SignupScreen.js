@@ -5,6 +5,7 @@ import axios from "axios";
 
 import logo from "../../assets/images/logo-trackit.png";
 import Loading from "../../shared/Loading";
+import url from "../../services/api";
 
 function LoginInput({ dataInput, handleFormChange, singup, blockInput }) {
     return (
@@ -28,26 +29,26 @@ export default function SignupScreen() {
     const [blockInput, setBlockInput] = useState(false);
     const navigate = useNavigate();
 
-function handleFormChange(e) {
-    let data = { ...dataInput };
-    data[e.target.name] = e.target.value;
-    setDataInput(data);
-}
+    function handleFormChange(e) {
+        let data = { ...dataInput };
+        data[e.target.name] = e.target.value;
+        setDataInput(data);
+    }
 
-function singup(e) {
-    e.preventDefault();
-    setBlockInput(true);
+    function singup(e) {
+        e.preventDefault();
+        setBlockInput(true);
 
-    let promise = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/sign-up", dataInput);
-    promise.then(response => {
-        navigate("/");
-    });
+        let promise = axios.post(url.signup, dataInput);
+        promise.then(response => {
+            navigate("/");
+        });
 
-    promise.catch(err => {
-        alert(err.response.data.message)
-        setBlockInput(false)
-    });
-}
+        promise.catch(err => {
+            alert(err.response.data.message)
+            setBlockInput(false)
+        });
+    }
 
     return (
         <Box>

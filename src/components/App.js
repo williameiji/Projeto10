@@ -14,7 +14,9 @@ export default function App() {
     const [userInfo, setUserInfo] = useState("");
     const [habits, setHabits] = useState([]);
     const [trackItToken, setTrackItToken] = useState({});
+    const [counter, setCounter] = useState(0);
     const [control, setControl] = useState(true);
+    const [todayTrack, setTodayTrack] = useState([]);
 
     if (control) {
         setControl(false);
@@ -25,7 +27,7 @@ export default function App() {
 
     return (
         <Body>
-            <UserContext.Provider value={{ userInfo, setUserInfo, habits, setHabits, trackItToken }}>
+            <UserContext.Provider value={{ userInfo, setUserInfo, habits, setHabits, trackItToken, counter, setCounter, todayTrack, setTodayTrack }}>
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<InitialScreen />} />
