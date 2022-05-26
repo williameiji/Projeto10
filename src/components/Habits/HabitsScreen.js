@@ -160,7 +160,7 @@ const Title = styled.div`
 `;
 
 const Text = styled.div`
-    font-size: 17.976px;
+    font-size: 18px;
     color: #666666;
     padding: 5px 18px;
     margin: 28px 0 0 0;
