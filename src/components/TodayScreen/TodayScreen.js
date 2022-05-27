@@ -11,6 +11,8 @@ import url from "../../services/api";
 export default function TodayScreen() {
     const { userInfo, todayTrack, setTodayTrack, setCounter, counter } = useContext(UserContext);
     const [control, setControl] = useState(true);
+    let percentageHabits = (counter * 100) / todayTrack.length;
+    const text = "Nenhum hábito concluído ainda";
 
     const config = {
         headers: {
@@ -34,8 +36,7 @@ export default function TodayScreen() {
                 setControl(true);
                 setCounter(counter + 1);
             });
-        }
-        if (done === true) {
+        }else {
             const promise = axios.post(`${url.habit}/${id}/uncheck`, {}, config);
             promise.then(response => {
                 setControl(true);
@@ -44,15 +45,12 @@ export default function TodayScreen() {
         }
     }
 
-    function checkDone (data) {
+    function checkDone(data) {
         let count = data.map(check => check.done).filter(check => check === true);
-        if(count.length > 0){
+        if (count.length > 0) {
             setCounter(count.length);
         }
     }
-
-    let percentageHabits = (counter * 100) / todayTrack.length;
-    const text = "Nenhum hábito concluído ainda";
 
     return (
         <Box>
@@ -63,7 +61,7 @@ export default function TodayScreen() {
                 <Habits key={index}>
                     <p>{value.name}</p>
                     <div><div>Sequência atual:</div><TextActual color={value.done}> {value.currentSequence} {value.currentSequence > 1 || value.currentSequence === 0 ? "dias" : "dia"}</TextActual></div>
-                    <div><div>Seu recorde:</div><TextRecord color={(value.currentSequence === value.highestSequence && value.highestSequence !== 0)}>{value.highestSequence} {value.highestSequence > 1 || value.currentSequence === 0  ? "dias" : "dia"}</TextRecord></div>
+                    <div><div>Seu recorde:</div><TextRecord color={(value.currentSequence === value.highestSequence && value.highestSequence !== 0)}>{value.highestSequence} {value.highestSequence > 1 || value.currentSequence === 0 ? "dias" : "dia"}</TextRecord></div>
                     <CheckBox background={value.done} onClick={() => checkHabit(value.id, value.done)}><ion-icon name="checkmark-outline"></ion-icon></CheckBox>
                 </Habits>)}
             <BottomBar />
