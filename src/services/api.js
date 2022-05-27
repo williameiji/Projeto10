@@ -4,6 +4,7 @@ const url = {
     habit: "https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits",
     deleteHabit: "https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/",
     today: "https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/today",
+    history: "https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/history/daily",
 }
 
 export default url;

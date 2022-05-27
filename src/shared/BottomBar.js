@@ -32,7 +32,7 @@ const Box = styled.div`
         width: 80px;
         height: 80px;
         background-color: #52B6FF;
-        border-radius: 100px;
+        border-radius: 50%;
         padding: 8px;
     }
 

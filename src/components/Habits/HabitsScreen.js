@@ -26,7 +26,7 @@ export default function HabitsScreen() {
             "Authorization": `Bearer ${userInfo.token}`
         }
     }
-
+    
     if (callHabits) {
         const promise = axios.get(url.habit, config);
         promise.then(response => {
