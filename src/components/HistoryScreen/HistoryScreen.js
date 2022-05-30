@@ -59,9 +59,11 @@ export default function HistoryScreen() {
     }
 
     function click(date) {
-        let render = trackHistory.find(track => track.day === dayjs(date).format('DD/MM/YYYY'))
-        setRenderPopup(render);
-        setControlRender(true);
+        let render = trackHistory.find(track => track.day === dayjs(date).format('DD/MM/YYYY'));
+        if(render !== undefined){
+            setRenderPopup(render);
+            setControlRender(true);
+        }
     }
 
     return (
