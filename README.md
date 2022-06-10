@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# TrackIt
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+<img src="https://user-images.githubusercontent.com/86417618/173082133-db4147ee-f7c7-42b9-ab42-9e216f1cd263.gif">
+</div>
 
-## Available Scripts
 
-In the project directory, you can run:
+## About
 
-### `npm start`
+A project (for mobile) made in React to track your habits and maintain discipline.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Check project running [here](https://vercel.com/williameiji/projeto10)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Functionalities
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Login and login persistence
+- Add and delete habits
+- Records of days accomplished
+- Calendar with markings if it was done or not
 
-### `npm run build`
+## Built With
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img align="left" alt="axios" width="50px" src="https://user-images.githubusercontent.com/86417618/173069652-284abbbc-f084-48a9-9131-256fcdbf979d.png" />
+<img align="left" alt="styledcomponents" width="50px" src="https://user-images.githubusercontent.com/86417618/173069692-f2499ae6-0d0d-4553-86e1-a934d6bbc09c.svg" />
+<img align="left" alt="reactrouter" width="50px" src="https://user-images.githubusercontent.com/86417618/173069701-b8f7c6be-9417-4b34-a75e-a8c4ad4dbc18.svg" />
+<img align="left" alt="javascript" width="50px" src="https://user-images.githubusercontent.com/86417618/173069712-169e17ab-559e-47db-9336-5b41e79cc3fc.svg" />
+<img align="left" alt="react" width="50px" src="https://user-images.githubusercontent.com/86417618/173069718-dde7a6ef-d599-4154-abd8-badca30cc3bf.svg" />
+<img align="left" alt="commitlint" width="50px" src="https://user-images.githubusercontent.com/86417618/173085763-cc805ee3-b08d-4afd-a89f-50ff0ed76fe4.svg" />
+<img align="left" alt="eslint" width="50px" src="https://user-images.githubusercontent.com/86417618/173085857-52e3615b-906f-417f-b5d4-9fc445b0482d.svg" />
+<img align="left" alt="prettier" width="50px" src="https://user-images.githubusercontent.com/86417618/173085935-1fe2fba2-81cf-477e-8c00-d113380291aa.svg" />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br />
+<br />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installing
 
-### `npm run eject`
+**Cloning the Repository**
+```
+$ git clone https://github.com/williameiji/track-it.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Installing dependencies**
+```
+$ npm install
+```
